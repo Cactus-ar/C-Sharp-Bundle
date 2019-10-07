@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<desayunos>
+  <desayuno>
+    <producto>Cafe con Leche y Tostadas</producto>
+    <precio>105.33</precio>
+    <descripcion>Taza mediana de cafe con leche y tres tostadas</descripcion>
+    <calorias>300</calorias>
+  </desayuno>
+  <desayuno>
+    <producto>Tazon de Cereales con Yogur</producto>
+    <precio>88.25</precio>
+    <descripcion>Tazon mediano con cereales y frutos secos, Yogur de Vainilla</descripcion>
+    <calorias>230</calorias>
+  </desayuno>
+  <desayuno>
+    <producto>Submarino con Churros</producto>
+    <precio>160.00</precio>
+    <descripcion>Vaso de Chocolate caliente con 3 churros rellenos</descripcion>
+    <calorias>800</calorias>
+  </desayuno>
+  <desayuno>
+    <producto>Cafe y Medialunas</producto>
+    <precio>90.55</precio>
+    <descripcion>Taza de Cafe y tres medialunas</descripcion>
+    <calorias>600</calorias>
+  </desayuno>
+  <desayuno>
+    <producto>Mate con Bizcochitos</producto>
+    <precio>45.90</precio>
+    <descripcion>Vaso de Mate cocido con 15 unidades de bizcochos salados</descripcion>
+    <calorias>550</calorias>
+  </desayuno>
+</desayunos>
