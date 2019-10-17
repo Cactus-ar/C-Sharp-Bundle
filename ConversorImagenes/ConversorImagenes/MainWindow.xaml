@@ -5,17 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConversorImagenes"
         mc:Ignorable="d"
-        Title="Conversor de Imagenes" Height="484.615" Width="594.971" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Conversor de Imagenes" Height="537.665" Width="594.971" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
 
         <Image x:Name="img_muestra" HorizontalAlignment="Left" Height="283" Margin="230,64,0,0" VerticalAlignment="Top" Width="336"/>
-        <Button x:Name="btn_Procesar" Content="Procesar" HorizontalAlignment="Left" Margin="230,418,0,0" VerticalAlignment="Top" Width="232" Height="28"/>
-        <Button x:Name="btn_salir" Content="Salir" HorizontalAlignment="Left" Margin="491,418,0,0" VerticalAlignment="Top" Width="75" Click="btn_salir_Click" Height="28"/>
+        <Button x:Name="btn_Procesar" Content="Procesar" HorizontalAlignment="Left" Margin="230,453,0,0" VerticalAlignment="Top" Width="232" Height="28" Click="Btn_Procesar_Click"/>
+        <Button x:Name="btn_salir" Content="Salir" HorizontalAlignment="Left" Margin="491,453,0,0" VerticalAlignment="Top" Width="75" Click="Btn_salir_Click" Height="28"/>
         <TextBox x:Name="txt_path" HorizontalAlignment="Left" Height="23" Margin="18,25,0,0" TextWrapping="Wrap" Text="Seleccionar Carpeta..." VerticalAlignment="Top" Width="385"/>
-        <Button x:Name="btn_examinar" Content="Examinar" HorizontalAlignment="Left" Height="23" Margin="439,25,0,0" VerticalAlignment="Top" Width="127" Click="btn_examinarClick"/>
-        <ListBox x:Name="lst_archivos" HorizontalAlignment="Left" Height="382" Margin="18,64,0,0" VerticalAlignment="Top" Width="191" SelectionChanged="lst_archivos_SelectionChanged"/>
-        <Label x:Name="label" Content="Convertir todo a formato..." HorizontalAlignment="Left" Height="29" Margin="230,376,0,0" VerticalAlignment="Top" Width="165"/>
-        <ComboBox x:Name="cmb_formatos" HorizontalAlignment="Left" Height="27" Margin="423,378,0,0" VerticalAlignment="Top" Width="143"/>
+        <Button x:Name="btn_examinar" Content="Examinar" HorizontalAlignment="Left" Height="23" Margin="439,25,0,0" VerticalAlignment="Top" Width="127" Click="Btn_examinarClick"/>
+        <ListBox x:Name="lst_archivos" HorizontalAlignment="Left" Height="417" Margin="18,64,0,0" VerticalAlignment="Top" Width="191" SelectionChanged="Lst_archivos_SelectionChanged"/>
+        <Label x:Name="label" Content="Convertir a formato..." HorizontalAlignment="Left" Height="29" Margin="230,405,0,0" VerticalAlignment="Top" Width="165"/>
+
+        <ComboBox x:Name="cmb_formatos" HorizontalAlignment="Left" Height="27" Margin="423,407,0,0" VerticalAlignment="Top" Width="143" SelectedValuePath="Content">
+            <ComboBoxItem Content="PNG" IsSelected="True"/>
+            <ComboBoxItem Content="JPG"/>
+            <ComboBoxItem Content="BMP"/>
+            <ComboBoxItem Content="TIFF"/>
+            <ComboBoxItem Content="GIF"/>
+            
+        </ComboBox>
+        <Label x:Name="label1" Content="Prefijo" HorizontalAlignment="Left" Height="28" Margin="230,365,0,0" VerticalAlignment="Top" Width="126"/>
+        <TextBox x:Name="txt_prefijo" HorizontalAlignment="Left" Height="21" Margin="401,369,0,0" TextWrapping="Wrap" Text="c_" VerticalAlignment="Top" Width="165"/>
 
     </Grid>
 </Window>
