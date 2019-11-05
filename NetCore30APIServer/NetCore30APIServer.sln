@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore30APIServer", "NetCore30APIServer\NetCore30APIServer.csproj", "{47DC1BF4-2366-47B4-BF1E-0DBF66D5ED51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47DC1BF4-2366-47B4-BF1E-0DBF66D5ED51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47DC1BF4-2366-47B4-BF1E-0DBF66D5ED51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47DC1BF4-2366-47B4-BF1E-0DBF66D5ED51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47DC1BF4-2366-47B4-BF1E-0DBF66D5ED51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCEB8DE1-C6E4-44F8-9596-24CD87A90278}
+	EndGlobalSection
+EndGlobal
