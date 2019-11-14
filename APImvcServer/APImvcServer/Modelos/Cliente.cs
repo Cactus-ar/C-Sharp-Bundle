@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace APImvcServer.Modelos
 {
+    //Si el nombre de la tabla difiere del nombre de la clase, hay que hacercelo saber
+    //la tabla se llama dbo.Salon_Clientes
+    [Table("Salon_Clientes", Schema = "dbo")]
+
     public class Cliente
     {
         [Key]

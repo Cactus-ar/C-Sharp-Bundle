@@ -15,7 +15,7 @@ namespace APImvcServer.Servicios
 
         }
 
-        public virtual DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Cliente>Clientes { get; set; }
 
     }
 }

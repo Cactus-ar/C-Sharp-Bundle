@@ -11,5 +11,13 @@ namespace APImvcServer.Interfaces
         ICollection<Cliente> GetlistadoClientes();
         Cliente GetCliente(int Id);
 
+        bool ClienteExiste(int Id);
+        bool MailClienteExiste(string mail);
+
+        bool CrearCliente(Cliente cliente);
+        bool ActualizarCliente(Cliente cliente);
+        bool EliminarCliente(Cliente cliente);
+        bool GuardarCliente();
+
     }
 }
