@@ -102,5 +102,59 @@ namespace APImvcServer.Controladores
             return CreatedAtRoute("GetCliente", new { Id = cliente.Id }, cliente);
         }
 
+
+        [HttpPut("{Id}")]
+        [ProducesResponseType(201, Type = typeof(Cliente))]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(422)]
+        [ProducesResponseType(500)]
+        public IActionResult ActualizarCliente(int Id, [FromBody] Cliente cliente)
+        {
+
+            if (cliente == null) //si viene mal..return mal
+                return BadRequest(ModelState);
+
+
+            if (cliente.Mail == null) //si viene mal..return mal
+                return BadRequest(ModelState);
+
+            //chequear por mail si existe
+            var mailExiste = _clientes.MailClienteExiste(cliente.Mail.Trim().ToUpper());
+
+            if (mailExiste)
+             //   return StatusCode(422, "Error mail Invalido");
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+
+            if (!_clientes.ActualizarCliente(cliente))
+                return StatusCode(500, "Error interno");
+
+
+            //Si todo fue Ok..Actualizar el cliente
+            return NoContent();
+        }
+
+        [HttpDelete("{Id}")]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
+        public IActionResult EliminarCliente(int Id)
+        {
+
+            //chequear el Id
+            if (!_clientes.ClienteExiste(Id))
+                return NotFound();
+
+            var registro = _clientes.GetCliente(Id);
+
+            if (!_clientes.EliminarCliente(registro))
+                return StatusCode(500, "No se pudo Eliminar");
+
+            return NoContent();
+
+                        
+        }
+
     }
 }
