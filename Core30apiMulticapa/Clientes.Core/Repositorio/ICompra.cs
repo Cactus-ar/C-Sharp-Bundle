@@ -8,7 +8,7 @@ namespace Clientes.Core.Repositorio
 {
     public interface ICompra: IRepositorio<Compra>
     {
-        Task<IEnumerable<Compra>> GetAllWithArtistAsync();
+        Task<IEnumerable<Compra>> GetAllWithClienteAsync();
         Task<Compra> GetWithClienteByIdAsync(int id);
         Task<IEnumerable<Compra>> GetAllWithClienteByClienteIdAsync(int artistId);
     }
