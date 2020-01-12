@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LamLinqDb", "LamLinqDb\LamLinqDb.csproj", "{F0CAB469-EFEE-4F10-9D10-62E1A50C32E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0CAB469-EFEE-4F10-9D10-62E1A50C32E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0CAB469-EFEE-4F10-9D10-62E1A50C32E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0CAB469-EFEE-4F10-9D10-62E1A50C32E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0CAB469-EFEE-4F10-9D10-62E1A50C32E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC202CB4-AE2E-425E-B749-B6F8BCC0D3BE}
+	EndGlobalSection
+EndGlobal
