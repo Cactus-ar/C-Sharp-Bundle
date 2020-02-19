@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gmailAPI", "gmailAPI\gmailAPI.csproj", "{FE754F82-B5DC-42FE-B29D-69D7AC8FF854}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE754F82-B5DC-42FE-B29D-69D7AC8FF854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE754F82-B5DC-42FE-B29D-69D7AC8FF854}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE754F82-B5DC-42FE-B29D-69D7AC8FF854}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE754F82-B5DC-42FE-B29D-69D7AC8FF854}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAD1648A-A807-42E5-98EB-52DA4E1A939C}
+	EndGlobalSection
+EndGlobal
