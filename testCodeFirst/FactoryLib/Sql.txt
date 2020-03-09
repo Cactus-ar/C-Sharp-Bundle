@@ -1,0 +1,151 @@
+﻿--------------------------------------------------------------------------------------------------------
+Tablas creadas por la migracion
+--------------------------------------------------------------------------------------------------------
+
+USE [AUXILIAR]
+GO
+
+/****** Objeto: Table [dbo].[__EFMigrationsHistory] Fecha del script: 9/3/2020 04:11:17 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[__EFMigrationsHistory] (
+    [MigrationId]    NVARCHAR (150) NOT NULL,
+    [ProductVersion] NVARCHAR (32)  NOT NULL
+);
+
+
+--------------------------------------------------------------------------------------------------------
+USE [AUXILIAR]
+GO
+
+/****** Objeto: Table [dbo].[Mail_Criterio_Actualizacion] Fecha del script: 9/3/2020 04:16:08 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Mail_Criterio_Actualizacion] (
+    [Id]                    INT            IDENTITY (1, 1) NOT NULL,
+    [Nombre]                NVARCHAR (100) NOT NULL,
+    [Descripcion]           NVARCHAR (250) NULL,
+    [CriterioActualizacion] NVARCHAR (MAX) NOT NULL,
+    [FactoryEventoId]       INT            NULL
+);
+
+
+GO
+CREATE NONCLUSTERED INDEX [IX_Mail_Criterio_Actualizacion_FactoryEventoId]
+    ON [dbo].[Mail_Criterio_Actualizacion]([FactoryEventoId] ASC);
+
+
+GO
+ALTER TABLE [dbo].[Mail_Criterio_Actualizacion]
+    ADD CONSTRAINT [PK_Mail_Criterio_Actualizacion] PRIMARY KEY CLUSTERED ([Id] ASC);
+
+
+GO
+ALTER TABLE [dbo].[Mail_Criterio_Actualizacion]
+    ADD CONSTRAINT [FK_Mail_Criterio_Actualizacion_MAIL_Evento_FactoryEventoId] FOREIGN KEY ([FactoryEventoId]) REFERENCES [dbo].[MAIL_Evento] ([Id]);
+--------------------------------------------------------------------------------------------------------
+USE [AUXILIAR]
+GO
+
+/****** Objeto: Table [dbo].[MAIL_Criterio_Busqueda] Fecha del script: 9/3/2020 04:16:42 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[MAIL_Criterio_Busqueda] (
+    [Id]               INT            IDENTITY (1, 1) NOT NULL,
+    [Nombre]           NVARCHAR (100) NOT NULL,
+    [Descripcion]      NVARCHAR (250) NULL,
+    [CriterioBusqueda] NVARCHAR (MAX) NOT NULL,
+    [Reemplazos]       NVARCHAR (400) NOT NULL,
+    [Sucursales]       INT            NOT NULL,
+    [EventoId]         INT            NOT NULL
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IX_MAIL_Criterio_Busqueda_EventoId]
+    ON [dbo].[MAIL_Criterio_Busqueda]([EventoId] ASC);
+
+
+GO
+ALTER TABLE [dbo].[MAIL_Criterio_Busqueda]
+    ADD CONSTRAINT [PK_MAIL_Criterio_Busqueda] PRIMARY KEY CLUSTERED ([Id] ASC);
+
+
+GO
+ALTER TABLE [dbo].[MAIL_Criterio_Busqueda]
+    ADD CONSTRAINT [FK_MAIL_Criterio_Busqueda_MAIL_Evento_EventoId] FOREIGN KEY ([EventoId]) REFERENCES [dbo].[MAIL_Evento] ([Id]) ON DELETE CASCADE;
+--------------------------------------------------------------------------------------------------------
+USE [AUXILIAR]
+GO
+
+/****** Objeto: Table [dbo].[MAIL_Evento] Fecha del script: 9/3/2020 04:17:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[MAIL_Evento] (
+    [Id]          INT            IDENTITY (1, 1) NOT NULL,
+    [Nombre]      NVARCHAR (100) NOT NULL,
+    [Descripcion] NVARCHAR (250) NULL,
+    [Fecha]       DATETIME2 (7)  NOT NULL,
+    [Prioridad]   INT            NOT NULL
+);
+
+--------------------------------------------------------------------------------------------------------
+USE [AUXILIAR]
+GO
+
+/****** Objeto: Table [dbo].[MAIL_Plantilla] Fecha del script: 9/3/2020 04:17:41 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[MAIL_Plantilla] (
+    [Id]          INT            IDENTITY (1, 1) NOT NULL,
+    [Nombre]      NVARCHAR (100) NOT NULL,
+    [Descripcion] NVARCHAR (250) NULL,
+    [Plantilla]   NVARCHAR (MAX) NOT NULL,
+    [Reemplazos]  NVARCHAR (400) NOT NULL,
+    [Mail_De]     NVARCHAR (200) NOT NULL,
+    [Asunto]      NVARCHAR (250) NOT NULL,
+    [Mail_cco]    NVARCHAR (200) NULL,
+    [EventoId]    INT            NOT NULL
+);
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IX_MAIL_Plantilla_EventoId]
+    ON [dbo].[MAIL_Plantilla]([EventoId] ASC);
+
+
+GO
+ALTER TABLE [dbo].[MAIL_Plantilla]
+    ADD CONSTRAINT [PK_MAIL_Plantilla] PRIMARY KEY CLUSTERED ([Id] ASC);
+
+
+GO
+ALTER TABLE [dbo].[MAIL_Plantilla]
+    ADD CONSTRAINT [FK_MAIL_Plantilla_MAIL_Evento_EventoId] FOREIGN KEY ([EventoId]) REFERENCES [dbo].[MAIL_Evento] ([Id]) ON DELETE CASCADE;
+
+
+
+
+
+
+
